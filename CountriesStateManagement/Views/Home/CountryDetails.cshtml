@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "CountryDetails";
+}
+@model Country
+<h1>CountryDetails</h1>
+
+<h3>Name: @Model.Name</h3>
+<h3>Language: @Model.Language</h3>
+<h3>Greeting: @Model.Greeting</h3>
+<h3>
+    Colors:
+    @foreach (var color in Model.NationalColors)
+    {
+        @(color + " ")
+    }
+</h3>
+@{TempData["description"] = Model.Description;}
+<form action="CountryDescription" method="post">
+    <input type="submit" name="View Details" />
+</form>
