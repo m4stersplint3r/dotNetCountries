@@ -12,9 +12,9 @@ namespace CountriesStateManagement.Controllers
     public class HomeController : Controller
     {
         List<Country> countries = new List<Country>{
-            new Country("USA", "English", "Hello World", "The land of the free", new List<string> { "red", "white", "blue" }),
-            new Country("Mexico", "Espanol", "Hola amigo.", "This is Mexico", new List<string> { "green", "white", "red" }),
-            new Country("Japan", "Japanese", "Kon'nichiwa tomodachi.", "All about Japan", new List<string> { "red", "white"}),
+            new Country("USA", "English", "Hello World", "The land of the free", new List<string> { "red", "white", "blue" }, "../USA.png"),
+            new Country("Mexico", "Espanol", "Hola amigo.", "This is Mexico", new List<string> { "green", "red", "white" }, "../USA.png"),
+            new Country("Japan", "Japanese", "Kon'nichiwa tomodachi.", "All about Japan", new List<string> { "red", "white"}, "../USA.png"),
             };
 
         public IActionResult Index()

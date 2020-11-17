@@ -3,11 +3,24 @@
     ViewData["Title"] = "CountryDetails";
 }
 @model Country
+<style>body{background-color: @Model.NationalColors[0]} 
+        #header{background-color: @Model.NationalColors[1]}
+        #footer{background-color: 
+                    @{
+                        if (Model.NationalColors.Count > 2)
+                        { @Model.NationalColors[2]; }
+                        else
+                        { @Model.NationalColors[1]; }
+                    }
+               }
+        
+    </style>
 <h1>CountryDetails</h1>
 
 <h3>Name: @Model.Name</h3>
 <h3>Language: @Model.Language</h3>
 <h3>Greeting: @Model.Greeting</h3>
+<h3><img src="@Model.FlagURL" /></h3>
 <h3>
     Colors:
     @foreach (var color in Model.NationalColors)
